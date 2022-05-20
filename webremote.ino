@@ -2,13 +2,13 @@
 #include <WiFiClient.h>
 #include <WiFiAP.h>
 
-//This will be the name and password of the wifi network your car is on
+//This will be the name (ssid) and password of the wifi network your car is on
 //Choose a different name so that you can uniquely identify your car
 const char *ssid = "yourAP";
 const char *password = "yourPassword";
 
 WiFiServer server(80);
-//Naming the Variables and assigning the PIN number 
+//Naming the variables and assigning the PIN number 
 //These PIN numbers will be the ones on the board that are turned on and off
 const int output0 = 0;
 const int output4 = 4;
@@ -79,11 +79,11 @@ void loop() {
         
         //HERE HERE !!! HERE HERE!!!
         //Here is where we define how to go Forward
-        //Think about what relays you need to turn off/on to make
-        //the car go forward
+        //Think about what relays you need to turn on or off
+        //to make the car go forward
         if (currentLine.endsWith("GET /F")) {
           //This command turns on PIN0
-          //copy and paste this command while changing which pin
+          //copy and paste this command while changing which PIN (output#)
           //you want to turn on (HIGH) or off (LOW) in order to 
           //make the car go forward
           digitalWrite(output0, HIGH); 
@@ -102,8 +102,8 @@ void loop() {
           digitalWrite(output17, HIGH); 
         }
         //This section stops the car
-        //Think about what condition needs to be met with the relays
-        //so that none of the engines are on
+        //Think about what conditions need to be met with the relays
+        //so that none of the motors are on
         else if (currentLine.endsWith("GET /off")) {
           digitalWrite(output0, LOW);
         }

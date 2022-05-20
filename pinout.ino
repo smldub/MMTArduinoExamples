@@ -13,8 +13,8 @@ void setup() {
 /*This function happens over and over again after setup is finished*/
 void loop() {
     delay(500); // A 500ms wait before next command
-    digitalWrite(pin4,HIGH); //Telling the pin to turn on
+    digitalWrite(pin4,HIGH); //Telling the pin to turn on (HIGH)
     delay(2000);// Keeping pin on for 2 seconds
-    digitalWrite(pin4,LOW); //Turning off the pin
+    digitalWrite(pin4,LOW); //Turning off (LOW) the pin
 }
     
